@@ -34,19 +34,9 @@ class buildContext extends StatelessWidget {
           buildAbout(data: data),
           smallSizedBox(),
           const Divider(),
-          smallSizedBox(),
-          const buildOtherSkills(),
-          smallSizedBox(),
+          buildOtherSkills(),
           const Divider(),
-          smallSizedBox(),
-          const buildOtherLanguages(),
+          buildOtherLanguages(),
         ],
       );
 }
-
-
-
-
-
-
-

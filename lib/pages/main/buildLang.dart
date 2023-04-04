@@ -23,5 +23,3 @@ class buildLang extends StatelessWidget {
         ),
       );
 }
-
-
