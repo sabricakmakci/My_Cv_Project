@@ -8,9 +8,9 @@ class profileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-        radius: profileHeight / 2,
-        backgroundColor: Colors.grey.shade800,
-        backgroundImage: const AssetImage("assets/images/img.png"),
-      );
+      radius: profileHeight / 2,
+      backgroundColor: Colors.grey.shade800,
+      backgroundImage: const AssetImage("assets/images/img.png"),
+    );
   }
 }

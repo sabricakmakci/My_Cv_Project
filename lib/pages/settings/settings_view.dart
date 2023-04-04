@@ -28,7 +28,7 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             const buildHeader(),
             bigSizedBox(),
-            const buildUserTile(),
+            buildUserTile(),
             commonDivider(),
             const buildAccountSettings(),
             const buildNotification(),

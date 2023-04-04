@@ -18,10 +18,8 @@ class buildTop extends StatelessWidget {
       clipBehavior: Clip.none,
       alignment: Alignment.center,
       children: [
-        Container(
-          margin: EdgeInsets.only(bottom: bottom), 
-          child: const coverImage()),
-        Positioned(top: top, child: const profileImage())
+        Container(margin: EdgeInsets.only(bottom: bottom), child: const coverImage()),
+        Positioned(top: top, child: profileImage())
       ],
     );
   }

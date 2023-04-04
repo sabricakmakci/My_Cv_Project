@@ -1,42 +1,58 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/service/user_services.dart';
 import 'package:untitled/utils/util_color.dart';
 
 import '../../common/common_sizedbox.dart';
 import 'buildAbout.dart';
-import 'buildOtherLanguages.dart';
-import 'buildOtherSkills.dart';
+import 'buildLanguages.dart';
+import 'buildSkills.dart';
 
 // ignore: camel_case_types
 class buildContext extends StatelessWidget {
-  const buildContext({
+  buildContext({
     Key? key,
     required this.data,
   }) : super(key: key);
 
   final String data;
+  final UserService _userService = UserService();
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: [
-          smallSizedBox(),
-          Text(
-            'Sabri Cakmakci',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: appColors.mein),
-          ),
-          smallSizedBox(),
-          const Text(
-            ' Sr. Mobile App Developer',
-            style: TextStyle(fontSize: 20, color: Colors.black26),
-          ),
-          normalSizedBox(),
-          const Divider(),
-          normalSizedBox(),
-          buildAbout(data: data),
-          smallSizedBox(),
-          const Divider(),
-          buildOtherSkills(),
-          const Divider(),
-          buildOtherLanguages(),
-        ],
-      );
+  Widget build(BuildContext context) => StreamBuilder(
+      stream: _userService.getUser(),
+      builder: (context, snapshot) {
+        return !snapshot.hasData
+            ? const CircularProgressIndicator()
+            : ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: ((context, index) {
+                  DocumentSnapshot user = snapshot.data!.docs[index];
+                  return Column(
+                    children: [
+                      smallSizedBox(),
+                      Text(
+                        "${user['name']}",
+                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: appColors.mein),
+                      ),
+                      smallSizedBox(),
+                      Text(
+                        "${user['subtitle']}",
+                        style: const TextStyle(fontSize: 20, color: Colors.black26),
+                      ),
+                      normalSizedBox(),
+                      const Divider(),
+                      normalSizedBox(),
+                      buildAbout(),
+                      smallSizedBox(),
+                      const Divider(),
+                      buildOtherSkills(),
+                      const Divider(),
+                      buildOtherLanguages(),
+                    ],
+                  );
+                }));
+      });
 }
