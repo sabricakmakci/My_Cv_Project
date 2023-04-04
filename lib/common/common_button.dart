@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/utils/util_color.dart';
 
-Container projectButton(BuildContext context, String title, Function onTap) {
+Container commonButton(BuildContext context, String title, Function onTap) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 50,
@@ -21,8 +21,8 @@ Container projectButton(BuildContext context, String title, Function onTap) {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
       child: Text(
-       title,
-        style:  TextStyle(color: appColors.mein, fontWeight: FontWeight.bold, fontSize: 16),
+        title,
+        style: TextStyle(color: appColors.mein, fontWeight: FontWeight.bold, fontSize: 16),
       ),
     ),
   );

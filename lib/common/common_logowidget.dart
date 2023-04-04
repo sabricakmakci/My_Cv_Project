@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Image logoWidget(String imageName) {
+Image commonLogoWidget(String imageName) {
   return Image.asset(
     imageName,
     fit: BoxFit.fitWidth,
@@ -9,6 +9,3 @@ Image logoWidget(String imageName) {
     color: Colors.white,
   );
 }
-
-
-
