@@ -5,17 +5,15 @@ import 'package:untitled/utils/util_color.dart';
 
 import '../../common/common_sizedbox.dart';
 import 'buildAbout.dart';
-import 'buildLanguages.dart';
-import 'buildSkills.dart';
+import 'buildOtherLanguages.dart';
+import 'buildOtherSkills.dart';
 
 // ignore: camel_case_types
 class buildContext extends StatelessWidget {
   buildContext({
     Key? key,
-    required this.data,
   }) : super(key: key);
 
-  final String data;
   final UserService _userService = UserService();
 
   @override

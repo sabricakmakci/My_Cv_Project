@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'buildContext.dart';
 import 'buildTop.dart';
 
@@ -11,22 +10,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  String data = '';
-
-  fetchFileData() async {
-    String responseText;
-    responseText = await rootBundle.loadString('textFiles/aboutme_tex.txt');
-    setState(() {
-      data = responseText;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchFileData();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +17,7 @@ class _MainPageState extends State<MainPage> {
       padding: EdgeInsets.zero,
       children: [
         const buildTop(),
-       buildContext(data: data),
+        buildContext(),
         const SizedBox(
           height: 100,
         )
@@ -42,4 +25,3 @@ class _MainPageState extends State<MainPage> {
     ));
   }
 }
-
