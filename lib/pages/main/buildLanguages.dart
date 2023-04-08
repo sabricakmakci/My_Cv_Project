@@ -6,8 +6,8 @@ import 'package:untitled/service/languages_services.dart';
 import 'package:untitled/utils/util_color.dart';
 
 // ignore: camel_case_types
-class buildOtherLanguages extends StatelessWidget {
-  buildOtherLanguages({
+class buildLanguages extends StatelessWidget {
+  buildLanguages({
     Key? key,
   }) : super(key: key);
   final LanguageService _languageService = LanguageService();

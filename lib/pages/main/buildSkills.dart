@@ -6,8 +6,8 @@ import 'package:untitled/utils/util_color.dart';
 import 'buildTitle.dart';
 
 // ignore: camel_case_types
-class buildOtherSkills extends StatelessWidget {
-  buildOtherSkills({
+class buildSkills extends StatelessWidget {
+  buildSkills({
     Key? key,
   }) : super(key: key);
 

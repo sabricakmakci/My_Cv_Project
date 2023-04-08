@@ -5,8 +5,8 @@ import 'package:untitled/utils/util_color.dart';
 
 import '../../common/common_sizedbox.dart';
 import 'buildAbout.dart';
-import 'buildOtherLanguages.dart';
-import 'buildOtherSkills.dart';
+import 'buildLanguages.dart';
+import 'buildSkills.dart';
 
 // ignore: camel_case_types
 class buildContext extends StatelessWidget {
@@ -46,9 +46,9 @@ class buildContext extends StatelessWidget {
                       buildAbout(),
                       smallSizedBox(),
                       const Divider(),
-                      buildOtherSkills(),
+                      buildSkills(),
                       const Divider(),
-                      buildOtherLanguages(),
+                      buildLanguages(),
                     ],
                   );
                 }));
